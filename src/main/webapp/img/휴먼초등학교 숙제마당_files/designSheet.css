@@ -1,0 +1,243 @@
+@charset "UTF-8";
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+ul {
+	list-style: none;
+	cursor: pointer;
+}
+
+#section{
+	margin: 10px 0; 
+	background-color: white; 
+	border-radius: 7px; 
+	overflow: hidden; 
+	box-shadow: #ccc 0px 0px 10px 1px; 
+	width: 1120px; 
+	z-index: 3;
+	position: relative;
+}
+.classList {
+	cursor: pointer;
+	padding-left: 20px;
+	display: none;
+}
+.bookmarkDiv{
+	cursor: pointer;
+	margin-left: -20px;
+	height: 200px; 
+	width: 50px;
+	display: inline-block;
+	transform: rotate(270deg);
+	position: absolute; 
+}
+.bookmarkImg{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.bookmarkP{
+	z-index: 2; 
+	position: absolute; 
+	bottom: 30%; 
+	color: white; 
+	font-weight: bold;
+	left: 50%;
+	transform: translateX(-50%) rotate(90deg); 
+	width: max-content;
+}
+#innerTitle{
+	padding: 10px 30px;
+	font-size: 25px;
+}
+#coverTitle{
+	color: white; 
+	padding: 10px 30px;
+	font-size: 20px;
+}
+.brown{
+	background: rgb(69, 56, 40); 
+	color: white;
+}
+.korean{
+	background-color: #ce6879;
+	color: white;
+}
+.english{
+	background-color: #f2c558;
+	color: white;
+}
+.math{
+	background-color: #7f9a40;
+	color: white;
+}
+.science{
+	background-color: #2c8c82;
+	color: white;
+}
+.remain{
+	padding: 5px;
+}
+.end{
+	background: #ccc;
+}
+.tight{
+	background: #ff8383;
+}
+.middle{
+	background: #fff783;
+}
+.free{
+	background: #bbff66;
+}
+.homework{
+	border: 1px solid black; 
+	border-radius: 3px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	width: 200px;
+	cursor: pointer;
+}
+#homeworkList{
+	padding: 20px; 
+	display: flex; 
+	flex-wrap: wrap;
+}
+.homework:nth-child(5n+0){
+	margin-right: 0;
+}
+.homeworkTitle{
+	padding: 5px;
+	color: white;
+}
+.selectInQuest{
+	width: 50%;
+	word-break: keep-all;
+	z-index: 1;
+}
+#questBox{
+	display: flex; 
+	font-size: 20px; 
+	margin: 0 auto; 
+	width: 1010px; 
+	align-content: space-around; 
+	flex-direction: column; 
+	flex-wrap: wrap; 
+	padding: 50px 0 70px 0; 
+	height: 94%;
+	position: relative;
+}
+.bottomBtn{
+	background: rgb(69, 56, 40);
+	bottom: 20px;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	padding: 10px 20px;
+	color: white;
+	border-radius: 4px;
+	border: none;
+	font-weight: bolder;
+    cursor: pointer;
+}
+.quest{
+	width: 480px; 
+	position: relative;
+}
+.quest.five, .quest.four{
+	margin-bottom: 20px;
+}
+.quest.short{
+	margin-bottom: 60px;
+}
+.quest.long{
+	margin-bottom: 100px;
+}
+.short input[type="text"]{
+	position: absolute;
+	bottom: -40px;
+	border: none;
+	border-bottom: 1px solid black;
+	outline: none;
+	font-size: 19px;
+}
+.long textarea{
+	position: absolute;
+	bottom: -90px;
+	height: 80px;
+	border: 1px solid black;
+	outline: none;
+	font-size: 15px;
+	width: 100%;
+	resize: none;
+}
+.quest .check{
+	display: none;
+}
+.check:checked + label {
+    color: blue;
+}
+.correctImg{
+	position: absolute;
+	transform: translate(-40%, -40%);
+	width: 100px;
+	height: 100px;
+}
+input[type=button] {
+	z-index: 1;
+	cursor: pointer;
+}
+input[disabled="disabled"], textarea[disabled="disabled"]{
+	background: none;
+	color: black;
+}
+.explanText, .long .explanText{
+	width: 250px; 
+	height: 120px; 
+	font-size: 0.75em; 
+	resize: none; 
+	padding: 5px;
+	position: static;
+	border-bottom: 0px;
+	outline: none;
+	border-color: black;
+	background: white;
+}
+.explanText:focus{
+	border-width: 2px 2px 0 2px;
+}
+.explanText:focus ~ .closeExplan{
+	border-width: 0 2px 2px 2px;
+}
+.explanBox{
+	width: 250px; 
+	position: absolute; 
+	z-index: 3;
+	display: none;
+	height: 120px;
+}
+.closeExplan{
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	left: 0;
+	transform: translateY(100%);
+	border-width: 0 1px 1px 1px;
+	border-color: black;
+	padding: 5px;
+}
+#submitListTable tbody tr:nth-child(even) {
+	background: #f0f0f0;
+}
+#submitListTable tbody tr:nth-child(odd) {
+	background: #fcfcfc;
+}
+form[name=confirmForm] .correctImg{
+	cursor: pointer;
+}
+form[name=resolveForm] label, form[name=resolveForm] input{
+	cursor: pointer;
+}

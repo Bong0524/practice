@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<!-- saved from url=(0038)http://localhost:8081/homework/user.do -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>휴먼초등학교 숙제마당</title>
+<link rel="icon" href="http://localhost:8081/homework/img/favicon.ico"> 
+<link href="./휴먼초등학교 숙제마당_files/designSheet.css" rel="stylesheet">
+<style type="text/css">
+/* https://610e2c3380568900398f148d-ulwliiyqae.chromatic.com/?path=/docs/chunks-participants--default */
+/* https://www.flaticon.com/kr/packs/back-to-school-83 */
+</style>
+<script src="./휴먼초등학교 숙제마당_files/jquery.min.js.다운로드" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+	</script>
+</head>
+<body style="display: flex; background: rgb(246, 249, 252); height: 100vh; min-width: 1520px;">
+	
+
+
+<nav style="height: 100vh; width: 250px; padding: 10px;">
+	<header>
+		<img alt="로고" src="./휴먼초등학교 숙제마당_files/logo.png" width="100%">
+	</header>
+	<ul style="font-weight: bold;">
+		<li onclick="clickMenu(&#39;All&#39;)">홈페이지</li>
+		
+			
+			
+				<li onclick="clickMenu(&#39;Clas&#39;,6,2)">우리학급</li>
+				<li>마이페이지</li>
+				<li onclick="location.href=&#39;user.do&#39;">로그아웃</li>
+			
+		
+		<li><p class="openClassList">학급목록</p>
+			<ul class="classList" style="font-weight: normal;">
+				<li><p class="openClassList">1학년</p>
+					<ul class="classList">
+						
+							
+								<li onclick="clickMenu(&#39;Clas&#39;,1,1)">
+									1반
+								</li>
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+					</ul>
+				</li>
+				<li><p class="openClassList">2학년</p>
+					<ul class="classList">
+						
+							
+						
+							
+								<li onclick="clickMenu(&#39;Clas&#39;,2,1)">
+									1반
+								</li>
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+					</ul>
+				</li>
+				<li><p class="openClassList">3학년</p>
+					<ul class="classList">
+						
+							
+						
+							
+						
+							
+								<li onclick="clickMenu(&#39;Clas&#39;,3,1)">
+									1반
+								</li>
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+					</ul>
+				</li>
+				<li><p class="openClassList">4학년</p>
+					<ul class="classList">
+						
+							
+						
+							
+						
+							
+						
+							
+								<li onclick="clickMenu(&#39;Clas&#39;,4,1)">
+									1반
+								</li>
+							
+						
+							
+						
+							
+						
+							
+							
+					</ul>
+				</li>
+				<li><p class="openClassList">5학년</p>
+					<ul class="classList">
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+								<li onclick="clickMenu(&#39;Clas&#39;,5,1)">
+									1반
+								</li>
+							
+						
+							
+						
+							
+						
+					</ul>
+				</li>
+				<li><p class="openClassList">6학년</p>
+					<ul class="classList">
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+								<li onclick="clickMenu(&#39;Clas&#39;,6,1)">
+									1반
+								</li>
+							
+						
+							
+								<li onclick="clickMenu(&#39;Clas&#39;,6,2)">
+									2반
+								</li>
+							
+						
+					</ul>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</nav>
+<script type="text/javascript">
+$(".openClassList").click(function() {
+	if ($(this).next().css("display") == "none")
+		$(this).next().css("display", "block");
+	else
+		$(this).next().css("display", "none");
+})
+</script>
+	<section id="section">
+
+
+
+<style>
+#questTitle{
+	width: 40%; 
+	background: none; 
+	font-size: 25px; 
+	font-weight: bold; 
+	border: none; 
+	outline: none; 
+	border-bottom: 1px solid white;
+}
+.questText{
+	border: none; 
+	outline: none; 
+	border-bottom: 1px solid #ccc;
+	font-size: 20px;
+	vertical-align: middle;
+	width: 100%;
+	resize: none;
+}
+.selectText{
+	border: none; 
+	outline: none; 
+	border-bottom: 1px solid #ccc;
+	font-size: 20px;
+	vertical-align: middle;
+	width: 100%;
+	resize: none;
+}
+.selectText::-webkit-scrollbar, questText::-webkit-scrollbar{ 
+	display:none;
+}
+.selectLabel{
+	width: 50%;
+	display: flex;
+}
+</style>
+<h1 id="innerTitle" class="brown"><input type="text" id="questTitle" placeholder="숙제의 제목을 입력해주세요."></h1>
+<div id="questBox">
+	<div id="makeQuestBtnBox" style="order: 1;">
+		<select name="king" id="questKind">
+			<option value="five">오지선다형</option>
+			<option value="four">다답형</option>
+			<option value="short">단답형</option>
+			<option value="long">서술형</option>
+		</select>
+		<button onclick="makeQuest()" style="order: 1;">문제추가</button>
+	</div>
+	<button class="bottomBtn" onclick="makeHomework()">숙제등록</button>
+<div style="display: flex; flex-wrap: wrap;" class="questBox1 five quest"><div style="display: flex; width: 100%;" class="quest1"><span style="width: 30px;">1.</span><textarea name="1selectText" class="questText" rows="1" style="height: 27px;"></textarea></div><div class="questImageBox"></div><div class="questSelect1" style="display: flex; flex-wrap: wrap; margin: 10px auto; width: 95%;"><input type="radio" value="1" name="1" id="1-1" class="check"><label class="selectLabel" for="1-1">①<textarea name="1select" rows="1" class="selectText" style="height: 27px;"></textarea></label><input type="radio" value="2" name="1" id="1-2" class="check"><label class="selectLabel" for="1-2">①<textarea name="1select" rows="1" class="selectText" style="height: 27px;"></textarea></label><input type="radio" value="3" name="1" id="1-3" class="check"><label class="selectLabel" for="1-3">①<textarea name="1select" rows="1" class="selectText" style="height: 27px;"></textarea></label><input type="radio" value="4" name="1" id="1-4" class="check"><label class="selectLabel" for="1-4">①<textarea name="1select" rows="1" class="selectText" style="height: 27px;"></textarea></label><input type="radio" value="5" name="1" id="1-5" class="check"><label class="selectLabel" for="1-5">①<textarea name="1select" rows="1" class="selectText" style="height: 27px;"></textarea></label></div></div></div>
+<script type="text/javascript">
+$(".questText").on('keydown keyup', function () {
+	$(this).css("height", ""+(($('.selectText').prop('scrollHeight')+1+'px')+""))
+});
+
+
+	$("#subjectBookMark").css("display","none");
+	var i=1;
+	function makeQuest(){
+		if($("#questKind").val() == "five"){
+			$("#questBox").append("<div style='display: flex; flex-wrap: wrap;' class='questBox"+i+" five quest'>");
+				$(".questBox"+i+"").append("<div style='display: flex; width: 100%;' class='quest"+i+"'>");
+					$(".quest"+i+"").append("<span style='width: 30px;'>"+i+".</span>");
+					$(".quest"+i+"").append("<textarea name='"+i+"selectText' class = 'questText' rows='1'></textarea>");
+				$(".questBox"+i+"").append("<div class='questImageBox'></div>");
+				$(".questBox"+i+"").append("<div class='questSelect"+i+"' style='display: flex; flex-wrap: wrap; margin: 10px auto; width: 95%;'>");
+					$(".questSelect"+i+"").append("<input type='radio' value='1' name='"+i+"' id='"+i+"-1' class='check'>");
+					$(".questSelect"+i+"").append("<label class='selectLabel' for='"+i+"-1'>①<textarea name='"+i+"select' rows='1' class ='selectText'></textarea></label>");
+					$(".questSelect"+i+"").append("<input type='radio' value='2' name='"+i+"' id='"+i+"-2' class='check'>");
+					$(".questSelect"+i+"").append("<label class='selectLabel' for='"+i+"-2'>①<textarea name='"+i+"select' rows='1' class ='selectText'></textarea></label>");
+					$(".questSelect"+i+"").append("<input type='radio' value='3' name='"+i+"' id='"+i+"-3' class='check'>");
+					$(".questSelect"+i+"").append("<label class='selectLabel' for='"+i+"-3'>①<textarea name='"+i+"select' rows='1' class ='selectText'></textarea></label>");
+					$(".questSelect"+i+"").append("<input type='radio' value='4' name='"+i+"' id='"+i+"-4' class='check'>");
+					$(".questSelect"+i+"").append("<label class='selectLabel' for='"+i+"-4'>①<textarea name='"+i+"select' rows='1' class ='selectText'></textarea></label>");
+					$(".questSelect"+i+"").append("<input type='radio' value='5' name='"+i+"' id='"+i+"-5' class='check'>");
+					$(".questSelect"+i+"").append("<label class='selectLabel' for='"+i+"-5'>①<textarea name='"+i+"select' rows='1' class ='selectText'></textarea></label>");
+		}else if($("#questKind").val() == "four"){
+			
+		}
+		
+
+		
+	    i++;
+	 };
+</script>
+</section>
+	
+
+<!-- 과목선택 책갈피 -->
+<div style="z-index: 1; width: 150px; position: relative; display: none;" id="subjectBookMark">
+	<div class="bookmarkDiv" onclick="clickMark(&#39;korean&#39;)">
+		<p class="bookmarkP">국어</p>
+		<img src="./휴먼초등학교 숙제마당_files/redmark.png" alt="redmark" class="bookmarkImg">
+	</div>
+	<div class="bookmarkDiv" style="top: 80px;" onclick="clickMark(&#39;english&#39;)">
+		<p class="bookmarkP">영어</p>
+		<img src="./휴먼초등학교 숙제마당_files/yellowmark.png" alt="yellowmark" class="bookmarkImg">
+	</div>
+	<div class="bookmarkDiv" style="top: 160px;" onclick="clickMark(&#39;math&#39;)">
+		<p class="bookmarkP">수학</p>
+		<img src="./휴먼초등학교 숙제마당_files/greenmark.png" alt="greenmark" class="bookmarkImg">
+	</div>
+	<div class="bookmarkDiv" style="top: 240px;" onclick="clickMark(&#39;science&#39;)">
+		<p class="bookmarkP">과학</p>
+		<img src="./휴먼초등학교 숙제마당_files/bluemark.png" alt="bluemark" class="bookmarkImg">
+	</div>
+	<div class="bookmarkDiv" style="top: 320px;" onclick="clickMark()">
+		<p class="bookmarkP">전체</p>
+		<img src="./휴먼초등학교 숙제마당_files/purplemark.png" alt="purplemark" class="bookmarkImg">
+	</div>
+</div>
+<script type="text/javascript">
+	$(".bookmarkDiv").mouseenter(function() {
+		$(this).css("margin-left", "0");
+	})
+	$(".bookmarkDiv").mouseleave(function() {
+		$(this).css("margin-left", "-20px");
+	})
+</script>
+	<script type="text/javascript">
+	
+		clickMenu('All');
+	
+	function clickMenu(f,g,c) {
+		$("#section").load("homeworkList.do", {filter : f, grade : g, clas : c});
+	}
+	function openHomework(homeworkId) {
+		$("#section").load("homeworkOpen.do", {homeworkId : homeworkId, how : "open"});
+	}
+	function resolveHomework(homeworkId) {
+		$("#section").load("homeworkOpen.do", {homeworkId : homeworkId, how : "resolve"});
+	}
+	function subjectBookMark() {
+		$("#homeworkBookMark").css("display","none");
+		$("#subjectBookMark").css("display","block");
+	}
+	function homeworkBookMark() {
+		$("#subjectBookMark").css("display","none");
+		$("#homeworkBookMark").css("display","block");
+	}
+	function openSubmitList(homeworkId) {
+		$("#section").load("homeworkTeacher.do", {homeworkId : homeworkId});
+	}
+	function openSubmission(homeworkId, studentId) {
+		$("#section").load("homeworkTeacher.do", {homeworkId : homeworkId, studentId : studentId});
+	}
+	</script>
+
+<iframe src="./휴먼초등학교 숙제마당_files/sources.html" allow="camera" style="display: none;"></iframe><iframe src="./휴먼초등학교 숙제마당_files/audiosources.html" allow="microphone" style="display: none;"></iframe></body><div id="vimeo-record-extension"></div></html>
